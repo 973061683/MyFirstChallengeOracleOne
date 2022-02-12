@@ -1,0 +1,128 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+
+	background: #436A92;
+	color: #000;
+	font-family: "Gill Sans Extrabold", Helvetica, sans-serif;
+}
+
+.contenedor{
+	width: 90%;
+	max-width: 1000%;
+	margin: 20px auto;
+	display: grid;
+	padding: 20px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-gap: 20px;
+
+	grid-template-areas: "header header header"
+						  "contenido contenido aside"
+						  "footer footer footer";
+}
+
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .aside,
+.contenedor .footer{
+	border-radius: 20px;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.contenedor .contenido .img{
+	text-align: center;
+}
+.contenedor .header{
+	grid-area: header;
+	background: #0B223A;
+	margin-bottom: 100px;
+	
+}
+
+.contenedor .contenido{
+	background: #315D8A;
+	grid-area: contenido;
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-areas:  "img label label label"
+						  "img texto texto texto"
+						  "img cont3 cont3 cont3";
+
+	text-align: center;
+}
+
+.contenedor .contenido .label{
+	grid-area: label;
+}
+.contenedor .contenido .img{
+	grid-area: img;
+	margin-left: 30px;
+}
+.contenedor .contenido .texto,
+.contenedor .aside .texto{
+	grid-area: texto;
+	margin-right: 20px;
+	border-radius: 0.5em;
+  	border: 1px solid rgba(0, 0, 0, 0.2);
+  	padding: 0.5em;
+}
+
+.contenedor .contenido .cont3{
+	grid-area: cont3;
+
+
+}
+
+.contenedor .aside{
+	background: #315D8A;
+	grid-area: aside;
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: repeat(3, auto);
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas: "label label label"
+						  "texto texto texto"
+						  "btn btn btn";
+
+	text-align: center;
+}
+
+.contenedor .aside .label{
+	grid-area: label;
+}
+.contenedor .aside .btn,
+.contenedor .contenido .btn{
+	grid-area: btn;
+	  border: 0;
+	  color: white;
+	  background: #07509B;
+	  padding: 10px;
+	  margin-top: 10px;
+	  border-radius: 0.5em;
+	  margin: 5px;
+
+}
+
+.contenedor .footer{
+	background: #0B223A;
+	grid-area: footer;
+	height: 50px;
+	margin-top: auto;
+}
+
+@media screen and (max-width: 768px){
+	.contenedor{
+		grid-template-areas: "header header header"
+						  "contenido contenido contenido"
+						  "aside aside aside"
+						  "footer footer footer";
+	}
+}
